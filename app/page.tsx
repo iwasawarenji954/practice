@@ -4,6 +4,7 @@ import React , { useState } from "react";
 import GreetingApp from '@/components/Greeting';
 import CountApp from "@/components/CountUp";
 import ToDoApp from "@/components/ToDo";
+import ToggleApp from "@/components/Toggle";
 
 export default function Home() {
   return (
@@ -30,6 +31,14 @@ export default function Home() {
           <p>Todo</p>
         </div>
         <ToDoApp />
+      </section>
+
+      <section className="bg-gray-300 p-3 m-3">
+        <div className="text-gray-500 text-xl">
+          <p>練習問題4</p>
+          <p>Toggle</p>
+        </div>
+        <ToggleApp />
       </section>
       
     </div>

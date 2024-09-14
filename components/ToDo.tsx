@@ -12,6 +12,7 @@ import {useState} from "react";
 function ToDoApp(){
     const [todos,setTodos] = useState<string[]>([]);
     const [newTodo, setNewTodo] = useState('');
+    const [enterCount, setEnterCount] = useState(0);  // Enterキーが押された回数を管理
     
     const handleAddTodo = () => {
         if(newTodo.trim() === '') return; //空なら追加しない
@@ -25,16 +26,29 @@ function ToDoApp(){
     };
       
 
-    
-
     return(
         <div>
             <input
                 type="text"
-                placeholder="Input New Todo"
+                placeholder="新しいToDoを入力"
                 value={newTodo}
-                onChange={(e) => setNewTodo(e.target.value)}
-            ></input>
+                onChange={(e) => setNewTodo(e.target.value)}  // 入力が変更されたら状態を更新
+                onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    // Enterキーが押されたらカウントを増やす
+                    setEnterCount(enterCount + 1);
+                
+                    // 2回目のEnterキー押下でToDoを追加する
+                if (enterCount + 1 === 2) {
+                    handleAddTodo();
+                    setEnterCount(0);  // カウントをリセットする
+                }
+                } else {
+                    // Enter以外のキーが押されたらカウントをリセット
+                    setEnterCount(0);
+                }
+            }}
+            />
             <button
                 className="bg-blue-300"
                 onClick={handleAddTodo}
@@ -48,6 +62,7 @@ function ToDoApp(){
                     {todo}  {/* 各ToDoを表示 */}
                     <button onClick={() => handleDelete(index)}>削除</button>
                 </div>
+                
                 ))}
             </div>
         </div>
