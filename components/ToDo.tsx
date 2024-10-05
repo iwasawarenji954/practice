@@ -5,7 +5,7 @@
 // ToDoリストは画面上に表示される。
 // 各ToDoの横に「削除」ボタンを追加し、ToDoを削除できるようにする。
 'use client'
-import { table } from "console";
+// import { table } from "console";
 import React from "react";
 import {useState} from "react";
 
