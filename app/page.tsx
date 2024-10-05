@@ -5,6 +5,7 @@ import CountApp from "@/components/CountUp";
 import ToDoApp from "@/components/ToDo";
 import ToggleApp from "@/components/Toggle";
 import Counter from '@/components/Counter';
+import Todo from '@/components/TodoAoi';
 
 export default function Home() {
   return (
@@ -46,6 +47,13 @@ export default function Home() {
           <p>Counter</p>
         </div>
         <Counter />
+      </section>
+      <section className="bg-gray-300 p-3 m-3">
+        <div className="text-gray-500 text-xl">
+          <p>練習問題6</p>
+          <p>ToDoAoi</p>
+        </div>
+        <Todo />
       </section>
     </div>
   )
