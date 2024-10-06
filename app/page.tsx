@@ -7,6 +7,7 @@ import ToggleApp from "@/components/Toggle";
 import Counter from '@/components/Counter';
 import Todo from '@/components/TodoAoi';
 import NameForm from '@/components/form';
+import PropsApp from '@/components/Props';
 
 export default function Home() {
   return (
@@ -62,6 +63,13 @@ export default function Home() {
           <p>NameForm</p>
         </div>
         <NameForm />
+      </section>
+      <section className="bg-gray-300 p-3 m-3">
+        <div className="text-gray-500 text-xl">
+          <p>練習問題8</p>
+          <p>Props</p>
+        </div>
+        <PropsApp />
       </section>
     </div>
   )
