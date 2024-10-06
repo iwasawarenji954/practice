@@ -6,6 +6,7 @@ import ToDoApp from "@/components/ToDo";
 import ToggleApp from "@/components/Toggle";
 import Counter from '@/components/Counter';
 import Todo from '@/components/TodoAoi';
+import NameForm from '@/components/form';
 
 export default function Home() {
   return (
@@ -54,6 +55,13 @@ export default function Home() {
           <p>ToDoAoi</p>
         </div>
         <Todo />
+      </section>
+      <section className="bg-gray-300 p-3 m-3">
+        <div className="text-gray-500 text-xl">
+          <p>練習問題7</p>
+          <p>NameForm</p>
+        </div>
+        <NameForm />
       </section>
     </div>
   )
